@@ -6,6 +6,8 @@ import { Accordion, AccordionDetails, AccordionSummary, makeStyles } from '@mate
 import { ExpandMore } from '@material-ui/icons';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import { supportedLngs } from './i18n';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
 export default function App() {
   const classes = useStyles();
 
+  const { t, i18n } = useTranslation(["UIStringResourcePerApp"]);
+  document.title = t("UIStringResourcePerApp:Application_Title");
+
   return (
     // For full screen: replace <Container></Container> with <div className={classes.root}></div>
     <Container maxWidth="xl">
@@ -33,24 +38,40 @@ export default function App() {
         </Toolbar>
       </AppBar>
       <Box my={4}>
-      {/* Basic-1.1. create-react-app */}
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.1">
-          <Typography >Basic-1.1. create-react-app</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>React 17.0.2</Typography>
-        </AccordionDetails>
-      </Accordion>
-      {/* Basic-1.2 material-ui/core */}
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
-          <Typography>Basic-1.2 material-ui/core</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>Material-UI ^4.11.4</Typography>
-        </AccordionDetails>
-      </Accordion>
+        {/* Basic-1.1. create-react-app */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.1">
+            <Typography >Basic-1.1. create-react-app</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>React 17.0.2</Typography>
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.2 material-ui/core */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+            <Typography>Basic-1.2 material-ui/core</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>Material-UI ^4.11.4</Typography>
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.3. i18next */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+            <Typography>Basic-1.3. i18next</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            current language: {i18n.language}. languages:
+            {supportedLngs.map((lng: string) => {
+              return (
+                <>
+                  {lng},
+                </>
+              );
+            })}
+          </AccordionDetails>
+        </Accordion>
       </Box>
     </Container >
   );
