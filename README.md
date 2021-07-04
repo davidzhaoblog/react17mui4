@@ -16,3 +16,6 @@ Basic-1.2.1. material-ui working with AppBar
 Basic-1.3. i18next
 npm install react-i18next i18next --save
 npm install i18next-http-backend i18next-browser-languagedetector
+
+Basic-1.4. react-redux
+npm install @reduxjs/toolkit react-redux
