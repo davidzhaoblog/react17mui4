@@ -22,3 +22,6 @@ npm install @reduxjs/toolkit react-redux
 
 Basic-1.4.1. reduxjs-toolkit-persist
 npm install reduxjs-toolkit-persist
+
+Basic-1.5. react-router-dom
+npm install --save react-router-dom

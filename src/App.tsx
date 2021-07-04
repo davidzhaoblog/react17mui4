@@ -2,8 +2,8 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { Accordion, AccordionDetails, AccordionSummary, Button, makeStyles } from '@material-ui/core';
-import { ExpandMore } from '@material-ui/icons';
+import { Accordion, AccordionDetails, AccordionSummary, Button, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core';
+import { Computer, ExpandMore } from '@material-ui/icons';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
@@ -15,6 +15,10 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { increment } from './layout/appSlice';
 import { RootState } from './store/CombinedReducers';
+
+// Basic-1.5. react-router-dom
+import { NavLink, Route, Switch } from 'react-router-dom';
+import TodoList from './features/Todo/ListPage';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,6 +94,25 @@ export default function App() {
           <AccordionDetails>
             <Button color="inherit" aria-label="Increment value"
               onClick={() => dispatch(increment())}>Increment</Button>
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.5. react-router-dom */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+            <Typography>Basic-1.5. react-router-dom</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Switch>
+              <Route path="/todo" component={TodoList} exact />
+            </Switch>
+            <NavLink exact={true} to={'/todo'} >
+              <ListItem button={true}>
+                <ListItemIcon>
+                  <Computer />
+                </ListItemIcon>
+                <ListItemText primary={'todo'} />
+              </ListItem>
+            </NavLink>
           </AccordionDetails>
         </Accordion>
       </Box>

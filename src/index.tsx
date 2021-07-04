@@ -8,14 +8,17 @@ import theme from './theme';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store/Store';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <Suspense fallback={<div>...</div>}>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <App />
+        <BrowserRouter>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <App />
+        </BrowserRouter>
       </ThemeProvider>
     </Provider>
   </Suspense>,
