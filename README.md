@@ -19,3 +19,6 @@ npm install i18next-http-backend i18next-browser-languagedetector
 
 Basic-1.4. react-redux
 npm install @reduxjs/toolkit react-redux
+
+Basic-1.4.1. reduxjs-toolkit-persist
+npm install reduxjs-toolkit-persist

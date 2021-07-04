@@ -1546,7 +1546,7 @@
     "schema-utils" "^2.6.5"
     "source-map" "^0.7.3"
 
-"@reduxjs/toolkit@^1.6.0":
+"@reduxjs/toolkit@^1.5.0", "@reduxjs/toolkit@^1.6.0":
   "integrity" "sha512-eGL50G+Vj5AG5uD0lineb6rRtbs96M8+hxbcwkHpZ8LQcmt0Bm33WyBSnj5AweLkjQ7ZP+KFRDHiLMznljRQ3A=="
   "resolved" "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-1.6.0.tgz"
   "version" "1.6.0"
@@ -9728,6 +9728,11 @@
   "version" "4.1.0"
   dependencies:
     "@babel/runtime" "^7.9.2"
+
+"reduxjs-toolkit-persist@^7.0.1":
+  "integrity" "sha512-MlYnhrwDu9IFx21uoGvS41lwba8HK2VWC0tVZZJzP45Cq41JlJ54HON2lgWak/+iBA8gUjaGvO3YtI/mXRmutA=="
+  "resolved" "https://registry.npmjs.org/reduxjs-toolkit-persist/-/reduxjs-toolkit-persist-7.0.1.tgz"
+  "version" "7.0.1"
 
 "regenerate-unicode-properties@^8.2.0":
   "integrity" "sha512-F9DjY1vKLo/tPePDycuH3dn9H1OTPIkVD9Kz4LODu+F2C75mgjAJ7x/gwy6ZcSNRAAkhNlJSOHRe8k3p+K9WhA=="
