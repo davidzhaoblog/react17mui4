@@ -20,6 +20,8 @@ import { RootState } from './store/CombinedReducers';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import TodoList from './features/Todo/ListPage';
 import { useCookies } from 'react-cookie';
+import ListWithAxios from './features/Todo/ListWithAxios';
+import ListWithReactFetch from './features/Todo/ListWithReactFetch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -121,13 +123,25 @@ export default function App() {
             </NavLink>
           </AccordionDetails>
         </Accordion>
-		{/* Basic-1.6. react-cookie */}
+        {/* Basic-1.6. react-cookie */}
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
             <Typography>Basic-1.6. react-cookie - {cookies['cookieTest']}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-           {cookies['cookieTest']}		 			 
+            {cookies['cookieTest']}
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.7. axios and react fetch */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+            <Typography>Basic-1.7. axios and react fetch</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <ListWithAxios />
+          </AccordionDetails>
+          <AccordionDetails>
+            <ListWithReactFetch />
           </AccordionDetails>
         </Accordion>
       </Box>

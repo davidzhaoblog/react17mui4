@@ -28,3 +28,7 @@ npm install --save react-router-dom
 
 Basic-1.6. react-cookie
 npm install react-cookie
+
+Basic-1.7. axios and react fetch
+npm install axios
+npm install --save @types/qs
