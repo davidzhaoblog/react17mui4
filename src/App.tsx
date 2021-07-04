@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -19,6 +19,7 @@ import { RootState } from './store/CombinedReducers';
 // Basic-1.5. react-router-dom
 import { NavLink, Route, Switch } from 'react-router-dom';
 import TodoList from './features/Todo/ListPage';
+import { useCookies } from 'react-cookie';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,6 +41,11 @@ export default function App() {
 
   const count = useSelector((state: RootState) => state.app.value)
   const dispatch = useDispatch()
+
+  const [cookies, setCookie] = useCookies(['cookieTest']);
+  useEffect(() => {
+    setCookie('cookieTest', 'abcdefg-123', { path: '/' })
+  })
 
   return (
     // For full screen: replace <Container></Container> with <div className={classes.root}></div>
@@ -113,6 +119,15 @@ export default function App() {
                 <ListItemText primary={'todo'} />
               </ListItem>
             </NavLink>
+          </AccordionDetails>
+        </Accordion>
+		{/* Basic-1.6. react-cookie */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+            <Typography>Basic-1.6. react-cookie - {cookies['cookieTest']}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+           {cookies['cookieTest']}		 			 
           </AccordionDetails>
         </Accordion>
       </Box>

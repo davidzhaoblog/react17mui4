@@ -25,3 +25,6 @@ npm install reduxjs-toolkit-persist
 
 Basic-1.5. react-router-dom
 npm install --save react-router-dom
+
+Basic-1.6. react-cookie
+npm install react-cookie
