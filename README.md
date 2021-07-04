@@ -10,3 +10,5 @@ Basic-1.1.1. tsconfig.json
 Basic-1.2. material-ui/core
 npm install @material-ui/core
 npm install @material-ui/icons
+
+Basic-1.2.1. material-ui working with AppBar
