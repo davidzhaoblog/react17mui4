@@ -32,3 +32,7 @@ npm install react-cookie
 Basic-1.7. axios and react fetch
 npm install axios
 npm install --save @types/qs
+
+Basic-1.8. Forms: 
+Basic-1.8.1. Form: react-hook-form V7
+npm install react-hook-form

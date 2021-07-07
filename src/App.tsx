@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import React, { useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -22,6 +23,7 @@ import TodoList from './features/Todo/ListPage';
 import { useCookies } from 'react-cookie';
 import ListWithAxios from './features/Todo/ListWithAxios';
 import ListWithReactFetch from './features/Todo/ListWithReactFetch';
+import ReactHookForm from './features/forms/ReactHookForm';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,7 +82,7 @@ export default function App() {
         </Accordion>
         {/* Basic-1.3. i18next */}
         <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.3">
             <Typography>Basic-1.3. i18next</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -96,7 +98,7 @@ export default function App() {
         </Accordion>
         {/* Basic-1.4. react-redux */}
         <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.4">
             <Typography>Basic-1.4. react-redux   {count}</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -106,7 +108,7 @@ export default function App() {
         </Accordion>
         {/* Basic-1.5. react-router-dom */}
         <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.5">
             <Typography>Basic-1.5. react-router-dom</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -125,7 +127,7 @@ export default function App() {
         </Accordion>
         {/* Basic-1.6. react-cookie */}
         <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.6">
             <Typography>Basic-1.6. react-cookie - {cookies['cookieTest']}</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -134,7 +136,7 @@ export default function App() {
         </Accordion>
         {/* Basic-1.7. axios and react fetch */}
         <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.2">
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.7">
             <Typography>Basic-1.7. axios and react fetch</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -142,6 +144,22 @@ export default function App() {
           </AccordionDetails>
           <AccordionDetails>
             <ListWithReactFetch />
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.8. Forms */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.8">
+            <Typography>Basic-1.8. Forms</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.8.1">
+                <Typography>Basic-1.8.1. Form: react-hook-form V7</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+              <ReactHookForm />
+              </AccordionDetails>
+            </Accordion>
           </AccordionDetails>
         </Accordion>
       </Box>
