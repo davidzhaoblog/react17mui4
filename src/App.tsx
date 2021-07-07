@@ -20,10 +20,19 @@ import { RootState } from './store/CombinedReducers';
 // Basic-1.5. react-router-dom
 import { NavLink, Route, Switch } from 'react-router-dom';
 import TodoList from './features/Todo/ListPage';
+
+// Basic-1.6. react-cookie
 import { useCookies } from 'react-cookie';
+
+// Basic-1.7. axios and react fetch
 import ListWithAxios from './features/Todo/ListWithAxios';
 import ListWithReactFetch from './features/Todo/ListWithReactFetch';
+
+// Basic-1.8. Forms: 
+// Basic-1.8.1. Form: react-hook-form V7
 import ReactHookForm from './features/forms/ReactHookForm';
+// Basic-1.8.2. Form: Formik V2
+import FormikForm from './features/forms/FormikForm';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -152,12 +161,21 @@ export default function App() {
             <Typography>Basic-1.8. Forms</Typography>
           </AccordionSummary>
           <AccordionDetails>
+
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.8.1">
                 <Typography>Basic-1.8.1. Form: react-hook-form V7</Typography>
               </AccordionSummary>
               <AccordionDetails>
-              <ReactHookForm />
+                <ReactHookForm />
+              </AccordionDetails>
+            </Accordion>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.8.2">
+                <Typography>Basic-1.8.2. Form: Formik V2</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <FormikForm />
               </AccordionDetails>
             </Accordion>
           </AccordionDetails>

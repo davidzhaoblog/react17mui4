@@ -36,3 +36,7 @@ npm install --save @types/qs
 Basic-1.8. Forms: 
 Basic-1.8.1. Form: react-hook-form V7
 npm install react-hook-form
+
+Basic-1.8.2. Form: Formik V2
+npm install formik formik-material-ui
+npm install -S yup
