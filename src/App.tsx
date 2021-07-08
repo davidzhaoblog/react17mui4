@@ -180,6 +180,21 @@ export default function App() {
             </Accordion>
           </AccordionDetails>
         </Accordion>
+        {/* Basic-1.9. .env and env-cmd */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.9">
+            <Typography>Basic-1.9. .env and env-cmd</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>This demo is same as Basic.1.7. the todo list datafile is using "process.env.REACT_APP_TODOLIST_DATAFILE_URL" instead of hard-coded "/todos.json"</Typography>
+          </AccordionDetails>
+          <AccordionDetails>
+            <ListWithAxios />
+          </AccordionDetails>
+          <AccordionDetails>
+            <ListWithReactFetch />
+          </AccordionDetails>
+        </Accordion>
       </Box>
     </Container >
   );

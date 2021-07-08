@@ -40,3 +40,7 @@ npm install react-hook-form
 Basic-1.8.2. Form: Formik V2
 npm install formik formik-material-ui
 npm install -S yup
+
+Basic-1.9. .env and env-cmd
+npm install env-cmd or npm install -g env-cmd
+npm run start:qa

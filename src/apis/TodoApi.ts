@@ -21,7 +21,7 @@ export class TodoApi extends ApiBase {
     this.getList = this.getList.bind(this);
   }
   public getList = (): Promise<Todo[]> => {
-    const url = '/todos.json';
+    const url = process.env.REACT_APP_TODOLIST_DATAFILE_URL;
     return this.get<Todo[], AxiosResponse<Todo[]>>(url).then(this.success);
   }
 }

@@ -6,7 +6,7 @@ import { Todo } from 'src/models/Todo';
 export default function ListWithReactFetch(): JSX.Element {
   const [todoList, setTodoList] = useState<Todo[]>([]);
   useEffect(() => {
-  fetch('/todos.json').then(response => response.json()).then(result=>{setTodoList(result);});
+  fetch(process.env.REACT_APP_TODOLIST_DATAFILE_URL).then(response => response.json()).then(result=>{setTodoList(result);});
     // console.log('component mounted!')
   }, [])
 
