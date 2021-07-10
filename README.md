@@ -41,3 +41,17 @@ Current commits in 01-basic branch as of 2021-06-30:
     - tsconfig.json changes:
         - "strictNullChecks": false,
         - "suppressImplicitAnyIndexErrors": true,
+- Basic-1.8. Forms: 
+    - Basic-1.8.1. Form: react-hook-form V7 (use this for Forms)
+        - npm install react-hook-form
+- Basic-1.8.2. Form: Formik V2
+        - npm install formik formik-material-ui
+        - npm install -S yup
+- Basic-1.9. .env and env-cmd
+    - npm install env-cmd or npm install -g env-cmd
+    - npm run start:qa
+- Basic-1.10. lodash
+    - npm i --save lodash
+    - Basic-1.10.1. lodash groupBy
+- Basic-1.11. clsx
+    - npm install --save clsx
