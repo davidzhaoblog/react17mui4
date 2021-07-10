@@ -33,6 +33,8 @@ import ListWithReactFetch from './features/Todo/ListWithReactFetch';
 import ReactHookForm from './features/forms/ReactHookForm';
 // Basic-1.8.2. Form: Formik V2
 import FormikForm from './features/forms/FormikForm';
+import LodashGroupByList from './features/Lodash/LodashGroupByList';
+import ClsxForm from './features/clsx/ClsxForm';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -193,6 +195,15 @@ export default function App() {
           </AccordionDetails>
           <AccordionDetails>
             <ListWithReactFetch />
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.10. lodash */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.10">
+            <Typography>Basic-1.10. lodash</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <LodashGroupByList />
           </AccordionDetails>
         </Accordion>
       </Box>

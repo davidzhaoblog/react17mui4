@@ -11,3 +11,8 @@ export function createTodoDefault(): Todo {
       completed: false,
   } as unknown as Todo;
 }
+
+export interface GroupedTodo {
+  key: string,
+  items: Todo[]
+}

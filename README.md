@@ -44,3 +44,8 @@ npm install -S yup
 Basic-1.9. .env and env-cmd
 npm install env-cmd or npm install -g env-cmd
 npm run start:qa
+
+Basic-1.10. lodash
+npm i --save lodash
+
+Basic-1.10.1. lodash groupBy
