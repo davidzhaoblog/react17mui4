@@ -206,6 +206,15 @@ export default function App() {
             <LodashGroupByList />
           </AccordionDetails>
         </Accordion>
+        {/* Basic-1.11. clsx */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.11">
+            <Typography>Basic-1.11. clsx</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <ClsxForm />
+          </AccordionDetails>
+        </Accordion>
       </Box>
     </Container >
   );

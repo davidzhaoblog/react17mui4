@@ -49,3 +49,6 @@ Basic-1.10. lodash
 npm i --save lodash
 
 Basic-1.10.1. lodash groupBy
+
+Basic-1.11. clsx
+npm install --save clsx
