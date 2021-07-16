@@ -35,6 +35,7 @@ import ReactHookForm from './features/forms/ReactHookForm';
 import FormikForm from './features/forms/FormikForm';
 import LodashGroupByList from './features/Lodash/LodashGroupByList';
 import ClsxForm from './features/clsx/ClsxForm';
+import DateTimePickerForm from './features/material-ui-pickers-moment/DateTimePickerForm';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -213,6 +214,15 @@ export default function App() {
           </AccordionSummary>
           <AccordionDetails>
             <ClsxForm />
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.12. @material-ui/pickers and date-fns */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.12">
+            <Typography>Basic-1.12. @material-ui/pickers and date-fns</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <DateTimePickerForm />
           </AccordionDetails>
         </Accordion>
       </Box>

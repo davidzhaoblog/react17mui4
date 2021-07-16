@@ -10,6 +10,9 @@ import { Provider } from 'react-redux';
 import store from './store/Store';
 import { BrowserRouter } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+//import MomentUtils from '@date-io/moment';
+import DateFnsUtils from '@date-io/date-fns';
 
 ReactDOM.render(
   <Suspense fallback={<div>...</div>}>
@@ -19,7 +22,9 @@ ReactDOM.render(
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <BrowserRouter>
             <CssBaseline />
-            <App />
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <App />
+            </MuiPickersUtilsProvider>
           </BrowserRouter>
         </ThemeProvider>
       </Provider>

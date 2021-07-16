@@ -52,3 +52,7 @@ Basic-1.10.1. lodash groupBy
 
 Basic-1.11. clsx
 npm install --save clsx
+
+Basic-1.12. @material-ui/pickers and date-fns
+npm i @material-ui/pickers
+npm i date-fns  @date-io/date-fns@1.x
