@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ListWithReactFetch(): JSX.Element {
+export default function LodashGroupByList(): JSX.Element {
   const classes = useStyles();
   const [groupedTodoList, setGroupedTodoList] = useState<GroupedTodo[]>([]);
   useEffect(() => {
@@ -52,7 +52,8 @@ export default function ListWithReactFetch(): JSX.Element {
         </AccordionSummary>
         {groupedTodoList && groupedTodoList.map((item: GroupedTodo) => {
           return (
-            <AccordionDetails>
+            /* Fix of Warning: Each child in a list should have a unique "key" prop. */
+            <AccordionDetails key={item.key}>
               <div className={classes.root}>
                 <Accordion>
                   <AccordionSummary

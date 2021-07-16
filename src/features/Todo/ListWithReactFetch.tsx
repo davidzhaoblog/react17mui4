@@ -1,6 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Todo } from 'src/models/Todo';
 
 export default function ListWithReactFetch(): JSX.Element {
@@ -23,7 +23,11 @@ export default function ListWithReactFetch(): JSX.Element {
         <AccordionDetails>
           {todoList && todoList.map((item: Todo) => {
             return (
-              <Typography key={item.id}>{item.id} - {item.completed} - {item.text}</Typography>
+              /* Fix of Warning: Failed prop type: Invalid prop `children` supplied to `ForwardRef(Typography)`, expected a ReactNode. */
+              <Typography key={item.id}>{item.id + '-' + item.completed  + '-' + item.text}</Typography>
+              /* 2 other fixes of Warning: Failed prop type: Invalid prop `children` supplied to `ForwardRef(Typography)`, expected a ReactNode. */
+              /* <Typography key={item.id}><> {item.id} - {item.completed} - {item.text} </></Typography> */
+              /* <Typography key={item.id}><React.Fragment> {item.id} - {item.completed} - {item.text}</React.Fragment></Typography> */
             )
           })}
         </AccordionDetails>

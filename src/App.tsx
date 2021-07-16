@@ -101,9 +101,10 @@ export default function App() {
             current languages: {i18n.language}. languages:
             {supportedLngs.map((lng: string) => {
               return (
-                <>
+                /* Fix of Warning: Each child in a list should have a unique "key" prop. */
+                <React.Fragment key={lng}>
                   {lng},
-                </>
+                </React.Fragment>
               );
             })}
           </AccordionDetails>
@@ -164,7 +165,6 @@ export default function App() {
             <Typography>Basic-1.8. Forms</Typography>
           </AccordionSummary>
           <AccordionDetails>
-
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.8.1">
                 <Typography>Basic-1.8.1. Form: react-hook-form V7</Typography>
@@ -223,6 +223,68 @@ export default function App() {
           </AccordionSummary>
           <AccordionDetails>
             <DateTimePickerForm />
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.13. 2 Popular React Warnings */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13">
+            <Typography>Basic-1.13. 2 Popular React Warnings</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13.1">
+              <Typography>Warning: Each child in a list should have a unique "key" prop. This demo is same as Basic.1.10. Look at the source code of App.tsx and LodashGroupByList.tsx to find out fixes</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <div>
+                return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in App.tsx */"}</p>
+                return (<p>{"<React.Fragment key={{lng}}>"}</p>
+                return (<p>    {"{{lng}},"}</p>
+                return (<p>{"</React.Fragment>"}</p>
+                return (<p>{"Or"}</p>
+                return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in LodashGroupByList.tsx */"}</p>
+                return (<p>{"<AccordionDetails key={{item.key}}>"}</p>
+                return (<p>{"..."}</p>
+                return (<p>{"</AccordionDetails>"}</p>
+              </div>
+            </AccordionDetails>
+            </Accordion>
+          </AccordionDetails>
+          <AccordionDetails>
+            <LodashGroupByList />
+          </AccordionDetails>
+          <AccordionDetails>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13.1">
+                <Typography>Warning: Failed prop type: Invalid prop `children` supplied to `ForwardRef(…)`, expected a ReactNode. This demo is same as Basic.1.7. Look at the source code of ListWithAxios.tsx and ListWithReactFetch.tsx to find out fixes</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <div>
+                  return (<p>{"/* Original Code, with Fix of Warning: Failed prop type: Invalid prop `children` supplied to `ForwardRef(Typography)`, expected a ReactNode. */"}</p>)
+                  return (<p>{"<Typography key={{item.id}}>"}</p>)
+                  return (<p>{"  /* The reason is following code represents 5 React ReactNodes*/"}</p>)
+                  return (<p>{"  /* But some React elements only allow 1 child ReactNode*/"}</p>)
+                  return (<p>{"  {{item.id}} - {{item.completed}} - {{item.text}}"}</p>)
+                  return (<p>{"</Typography>"}</p>)
+                  return (<p>{"/* Fix 1, suggested, 1 React ReactNode */"}</p>)
+                  return (<p>{"<Typography key={{item.id}}>"}</p>)
+                  return (<p>{"  {{item.id + '-' + item.completed  + '-' + item.text}}"}</p>)
+                  return (<p>{"</Typography>"}</p>)
+                  return (<p>{"/* Fix 2, not suggested, 5 React ReactNodes */"}</p>)
+                  return (<p>{"<Typography key={{item.id}}>"}</p>)
+                  return (<p>{"  <> {{item.id}} - {{item.completed}} - {{item.text}} </>"}</p>)
+                  return (<p>{"</Typography>"}</p>)
+                  return (<p>{"/* Fix 3, not suggested, 15 React ReactNodes */"}</p>)
+                  return (<p>{"<Typography key={{item.id}}>"}</p>)
+                  return (<p>{"  <React.Fragment> {{item.id}} - {{item.completed}} - {{item.text}}"}</p>)
+                  return (<p>{"  </React.Fragment>"}</p>)
+                  return (<p>{"</Typography>"}</p>)
+                </div>
+              </AccordionDetails>
+            </Accordion>
+          </AccordionDetails>
+          <AccordionDetails>
+            <ListWithAxios />
           </AccordionDetails>
         </Accordion>
       </Box>

@@ -56,3 +56,7 @@ npm install --save clsx
 Basic-1.12. @material-ui/pickers and date-fns
 npm i @material-ui/pickers
 npm i date-fns  @date-io/date-fns@1.x
+
+Basic-1.13. 2 Popular React Warnings
+Warning: Each child in a list should have a unique "key" prop.
+Warning: Failed prop type: Invalid prop `children` supplied to `ForwardRef(…)`, expected a ReactNode.
