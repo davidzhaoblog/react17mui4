@@ -1,11 +1,11 @@
 This is master branch.
 The npm packages will be maintained separately from other branches, together with tsconfig.json.
-This commit contains blank react homepage with AppBar, but with all npm packages we are currently using in following branches, tsconfig.json same as latest commit in [01-basic](https://github.com/davidzhaoblog/react17mui4/tree/01-basic) branch.
+This commit contains blank react homepage with AppBar, but with all npm packages we are currently using in following branches, tsconfig.json same as latest commit in [1-basic](https://github.com/davidzhaoblog/react17mui4/tree/1-basic) branch.
 
 Todo list related code also included to test some features.
 
 We will have/already had a few branches to contain key react features.
-[01-basic](https://github.com/davidzhaoblog/react17mui4/tree/01-basic): some basic npm packages
+[1-basic](https://github.com/davidzhaoblog/react17mui4/tree/1-basic): some basic npm packages
 
 Possible future branches should base on this master branch:
 - 02-layout
