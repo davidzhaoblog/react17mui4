@@ -6,6 +6,7 @@ Todo list related code also included to test some features.
 
 We will have/already had a few branches to contain key react features.
 [1-basic](https://github.com/davidzhaoblog/react17mui4/tree/1-basic): some basic npm packages
+- Document on Medium.com: [React Update 2021 (P1) For Beginners](https://medium.com/@david.zhao.blog/react-update-2021-p1-for-beginners-70b0a5356e07?source=friends_link&sk=4994d17e77fc5c5a9473c867257c406d)
 
 Possible future branches should base on this master branch:
 - 02-layout
