@@ -18,7 +18,7 @@ import { increment } from './layout/appSlice';
 import { RootState } from './store/CombinedReducers';
 
 // Basic-1.5. react-router-dom
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { Link, NavLink, Route, Switch } from 'react-router-dom';
 import TodoList from './features/Todo/ListPage';
 
 // Basic-1.6. react-cookie
@@ -68,9 +68,11 @@ export default function App() {
     <Container maxWidth="xl">
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            React17MUI4
-          </Typography>
+          <Link to={{ pathname: "https://medium.com/@david.zhao.blog/react-update-2021-p1-for-beginners-70b0a5356e07?source=friends_link&sk=4994d17e77fc5c5a9473c867257c406d" }} target="_blank" >
+            <Typography variant="h6" className={classes.title}>
+              React17MUI4 - Read Document on Medium.com
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>
       <Box my={4}>
@@ -231,23 +233,23 @@ export default function App() {
             <Typography>Basic-1.13. 2 Popular React Warnings</Typography>
           </AccordionSummary>
           <AccordionDetails>
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13.1">
-              <Typography>Warning: Each child in a list should have a unique "key" prop. This demo is same as Basic.1.10. Look at the source code of App.tsx and LodashGroupByList.tsx to find out fixes</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div>
-                return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in App.tsx */"}</p>
-                return (<p>{"<React.Fragment key={{lng}}>"}</p>
-                return (<p>    {"{{lng}},"}</p>
-                return (<p>{"</React.Fragment>"}</p>
-                return (<p>{"Or"}</p>
-                return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in LodashGroupByList.tsx */"}</p>
-                return (<p>{"<AccordionDetails key={{item.key}}>"}</p>
-                return (<p>{"..."}</p>
-                return (<p>{"</AccordionDetails>"}</p>
-              </div>
-            </AccordionDetails>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13.1">
+                <Typography>Warning: Each child in a list should have a unique "key" prop. This demo is same as Basic.1.10. Look at the source code of App.tsx and LodashGroupByList.tsx to find out fixes</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <div>
+                  return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in App.tsx */"}</p>
+                  return (<p>{"<React.Fragment key={{lng}}>"}</p>
+                  return (<p>    {"{{lng}},"}</p>
+                  return (<p>{"</React.Fragment>"}</p>
+                  return (<p>{"Or"}</p>
+                  return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in LodashGroupByList.tsx */"}</p>
+                  return (<p>{"<AccordionDetails key={{item.key}}>"}</p>
+                  return (<p>{"..."}</p>
+                  return (<p>{"</AccordionDetails>"}</p>
+                </div>
+              </AccordionDetails>
             </Accordion>
           </AccordionDetails>
           <AccordionDetails>
