@@ -1,4 +1,4 @@
-Document on Medium.com: [React Update 2021 (P1) For Beginners](https://medium.com/@david.zhao.blog/react-update-2021-p1-for-beginners-70b0a5356e07?source=friends_link&sk=4994d17e77fc5c5a9473c867257c406d)
+Document on Medium.com: [React Update 2021](https://medium.com/@david.zhao.blog/list/react-update-2021-725e07dee049)
 
 Basic-1.1. create-react-app 
 npm uninstall -g npx
