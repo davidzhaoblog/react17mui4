@@ -36,6 +36,7 @@ import FormikForm from './features/forms/FormikForm';
 import LodashGroupByList from './features/Lodash/LodashGroupByList';
 import ClsxForm from './features/clsx/ClsxForm';
 import DateTimePickerForm from './features/material-ui-pickers-moment/DateTimePickerForm';
+import ErrorFixesForm from './features/Errors/ErrorFixesForm';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -225,29 +226,29 @@ export default function App() {
             <DateTimePickerForm />
           </AccordionDetails>
         </Accordion>
-        {/* Basic-1.13. 2 Popular React Warnings */}
+        {/* Basic-1.13. Warnings and Fixes */}
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13">
-            <Typography>Basic-1.13. 2 Popular React Warnings</Typography>
+            <Typography>Basic-1.13. Warnings and Fixes </Typography>
           </AccordionSummary>
           <AccordionDetails>
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13.1">
-              <Typography>Warning: Each child in a list should have a unique "key" prop. This demo is same as Basic.1.10. Look at the source code of App.tsx and LodashGroupByList.tsx to find out fixes</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div>
-                return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in App.tsx */"}</p>
-                return (<p>{"<React.Fragment key={{lng}}>"}</p>
-                return (<p>    {"{{lng}},"}</p>
-                return (<p>{"</React.Fragment>"}</p>
-                return (<p>{"Or"}</p>
-                return (<p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in LodashGroupByList.tsx */"}</p>
-                return (<p>{"<AccordionDetails key={{item.key}}>"}</p>
-                return (<p>{"..."}</p>
-                return (<p>{"</AccordionDetails>"}</p>
-              </div>
-            </AccordionDetails>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.13.1">
+                <Typography>Warning: Each child in a list should have a unique "key" prop. This demo is same as Basic.1.10. Look at the source code of App.tsx and LodashGroupByList.tsx to find out fixes</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <div>
+                  <p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in App.tsx */"}</p>
+                  <p>{"<React.Fragment key={{lng}}>"}</p>
+                  <p>    {"{{lng}},"}</p>
+                  <p>{"</React.Fragment>"}</p>
+                  <p>{"Or"}</p>
+                  <p>{"/* Fix of Warning: Each child in a list should have a unique \"key\" prop. in LodashGroupByList.tsx */"}</p>
+                  <p>{"<AccordionDetails key={{item.key}}>"}</p>
+                  <p>{"..."}</p>
+                  <p>{"</AccordionDetails>"}</p>
+                </div>
+              </AccordionDetails>
             </Accordion>
           </AccordionDetails>
           <AccordionDetails>
@@ -260,31 +261,56 @@ export default function App() {
               </AccordionSummary>
               <AccordionDetails>
                 <div>
-                  return (<p>{"/* Original Code, with Fix of Warning: Failed prop type: Invalid prop `children` supplied to `ForwardRef(Typography)`, expected a ReactNode. */"}</p>)
-                  return (<p>{"<Typography key={{item.id}}>"}</p>)
-                  return (<p>{"  /* The reason is following code represents 5 React ReactNodes*/"}</p>)
-                  return (<p>{"  /* But some React elements only allow 1 child ReactNode*/"}</p>)
-                  return (<p>{"  {{item.id}} - {{item.completed}} - {{item.text}}"}</p>)
-                  return (<p>{"</Typography>"}</p>)
-                  return (<p>{"/* Fix 1, suggested, 1 React ReactNode */"}</p>)
-                  return (<p>{"<Typography key={{item.id}}>"}</p>)
-                  return (<p>{"  {{item.id + '-' + item.completed  + '-' + item.text}}"}</p>)
-                  return (<p>{"</Typography>"}</p>)
-                  return (<p>{"/* Fix 2, not suggested, 5 React ReactNodes */"}</p>)
-                  return (<p>{"<Typography key={{item.id}}>"}</p>)
-                  return (<p>{"  <> {{item.id}} - {{item.completed}} - {{item.text}} </>"}</p>)
-                  return (<p>{"</Typography>"}</p>)
-                  return (<p>{"/* Fix 3, not suggested, 15 React ReactNodes */"}</p>)
-                  return (<p>{"<Typography key={{item.id}}>"}</p>)
-                  return (<p>{"  <React.Fragment> {{item.id}} - {{item.completed}} - {{item.text}}"}</p>)
-                  return (<p>{"  </React.Fragment>"}</p>)
-                  return (<p>{"</Typography>"}</p>)
+                  <p>{"/* Original Code, with Fix of Warning: Failed prop type: Invalid prop `children` supplied to `ForwardRef(Typography)`, expected a ReactNode. */"}</p>
+                  <p>{"<Typography key={{item.id}}>"}</p>
+                  <p>{"  /* The reason is following code represents 5 React ReactNodes*/"}</p>
+                  <p>{"  /* But some React elements only allow 1 child ReactNode*/"}</p>
+                  <p>{"  {{item.id}} - {{item.completed}} - {{item.text}}"}</p>
+                  <p>{"</Typography>"}</p>
+                  <p>{"/* Fix 1, suggested, 1 React ReactNode */"}</p>
+                  <p>{"<Typography key={{item.id}}>"}</p>
+                  <p>{"  {{item.id + '-' + item.completed  + '-' + item.text}}"}</p>
+                  <p>{"</Typography>"}</p>
+                  <p>{"/* Fix 2, not suggested, 5 React ReactNodes */"}</p>
+                  <p>{"<Typography key={{item.id}}>"}</p>
+                  <p>{"  <> {{item.id}} - {{item.completed}} - {{item.text}} </>"}</p>
+                  <p>{"</Typography>"}</p>
+                  <p>{"/* Fix 3, not suggested, 15 React ReactNodes */"}</p>
+                  <p>{"<Typography key={{item.id}}>"}</p>
+                  <p>{"  <React.Fragment> {{item.id}} - {{item.completed}} - {{item.text}}"}</p>
+                  <p>{"  </React.Fragment>"}</p>
+                  <p>{"</Typography>"}</p>
                 </div>
               </AccordionDetails>
             </Accordion>
           </AccordionDetails>
           <AccordionDetails>
             <ListWithAxios />
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic-1.14. Errors and Fixes */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.14">
+            <Typography>Basic-1.14. Errors and Fixes</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic-1.14.1">
+                <Typography>Typescript Error: Argument of type 'unknown' is not assignable to parameter of type '...' or 'SetStateAction &lt...&gt'</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <div>
+                  <Typography>{"/* Fix of Typescript Error: Argument of type 'unknown' is not assignable to parameter of type '...' or 'SetStateAction &lt...&gt'"}</Typography>
+                  <p />
+                  <Typography>{"//setAgeRange(event.target.value);"}</Typography>
+                  <p />
+                  <Typography>{"setAgeRange(typeof event.target.value === 'string' ? event.target.value : '');"}</Typography>
+                </div>
+              </AccordionDetails>
+            </Accordion>
+          </AccordionDetails>
+          <AccordionDetails>
+            <ErrorFixesForm />
           </AccordionDetails>
         </Accordion>
       </Box>
