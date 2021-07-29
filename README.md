@@ -88,3 +88,5 @@ Basic-1.14.1. Typescript Error: Argument of type 'unknown' is not assignable to 
 
 The purpose is to be compatible with some npm packages.
 
+Basic 1.15. Data Visualization
+Prepare data for Data Visualization
