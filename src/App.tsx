@@ -38,6 +38,9 @@ import ClsxForm from './features/clsx/ClsxForm';
 import DateTimePickerForm from './features/material-ui-pickers-moment/DateTimePickerForm';
 import ErrorFixesForm from './features/Errors/ErrorFixesForm';
 
+// Basic-1.15 Data Visualization
+import DataVisualizationBizCharts4111 from './features/Data_Visualization/DataVisualizationBizCharts4111';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -311,6 +314,15 @@ export default function App() {
           </AccordionDetails>
           <AccordionDetails>
             <ErrorFixesForm />
+          </AccordionDetails>
+        </Accordion>
+        {/* Basic 1.15. Data Visualization */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel2a-content" id="panel2a-header-basic1.15.">
+            <Typography>Basic 1.15. Data Visualization</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <DataVisualizationBizCharts4111 />
           </AccordionDetails>
         </Accordion>
       </Box>

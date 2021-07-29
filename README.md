@@ -90,3 +90,7 @@ The purpose is to be compatible with some npm packages.
 
 Basic 1.15. Data Visualization
 Prepare data for Data Visualization
+
+Basic 1.15.1. Data Visualization: BizCharts^4.1.11
+npm install bizcharts
+npm install @antv/data-set
