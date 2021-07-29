@@ -84,6 +84,7 @@ Basic-1.14. Errors and Fixes
 
 Basic-1.14.1. Typescript Error: Argument of type 'unknown' is not assignable to parameter of type '...' or 'SetStateAction <...>'
 
+***Lowered down React version to v16.14.0***
 
-
+The purpose is to be compatible with some npm packages.
 
