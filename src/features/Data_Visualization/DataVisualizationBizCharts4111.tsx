@@ -1,6 +1,6 @@
 import { Chart } from "bizcharts";
 import DataSet from "@antv/data-set";
-import { blockHeatmapChartTestData, heatmapChartTestData, lineChartTestData, sankeyChartTestData, SankeyChartTestLinkDataType, SankeyChartTestNodeDataType } from "./DataVisualizationTestData";
+import { blockHeatmapChartScale, blockHeatmapChartTestData, heatmapChartTestData, lineChartTestData, sankeyChartTestData, SankeyChartTestLinkDataType, SankeyChartTestNodeDataType } from "./DataVisualizationTestData";
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@material-ui/core";
 import { ExpandMore } from "@material-ui/icons";
 
@@ -42,82 +42,65 @@ export default function DataVisualizationBizCharts4111() {
   )
 
   // 2. Block Heatmap
-  const blockHeatmapChartScale = {
-    name: {
-      type: 'cat',
-      values: ['Alexander', 'Marie', 'Maximilian', 'Sophia', 'Lukas', 'Maria', 'Leon', 'Anna', 'Tim', 'Laura'],
-    },
-    day: {
-      type: 'cat',
-      values: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    },
-    sales: {
-      nice: true,
-    }
-  };
-  const renderBlockHeatmapChart = () => {
-    return (
-      <Chart
-        scale={blockHeatmapChartScale}
-        height={height}
-        width={width}
-        data={blockHeatmapChartTestData.data}
-        pure
-        title={{
-          visible: true,
-          text: blockHeatmapChartTestData.id,
+  const renderBlockHeatmapChart = () => (
+    <Chart
+      scale={blockHeatmapChartScale}
+      height={height}
+      width={width}
+      data={blockHeatmapChartTestData.data}
+      pure
+      title={{
+        visible: true,
+        text: blockHeatmapChartTestData.id,
+      }}
+    >
+      <Axis
+        name={'name'}
+        tickLine={null}
+        grid={{
+          alignTick: false,
+          line: {
+            style: {
+              lineWidth: 1,
+              lineDash: null,
+              stroke: '#f0f0f0',
+            },
+          },
+        }} />
+      <Axis
+        name={'day'}
+        title={null}
+        grid={{
+          alignTick: false,
+          line: {
+            style: {
+              lineWidth: 1,
+              lineDash: null,
+              stroke: '#f0f0f0',
+            },
+          },
+        }} />
+      <Tooltip shared showMarkers={false} />
+      <Polygon
+        position={'name*day'}
+        color={['sales', '#BAE7FF-#1890FF-#0050B3']}
+        label={['sales', {
+          offset: -2,
+          style: {
+            fill: '#fff',
+            shadowBlur: 2,
+            shadowColor: 'rgba(0, 0, 0, .45)',
+          },
+        }]}
+        style={{
+          lineWidth: 1,
+          stroke: '#fff',
         }}
       >
-        <Axis
-          name={'name'}
-          tickLine={null}
-          grid={{
-            alignTick: false,
-            line: {
-              style: {
-                lineWidth: 1,
-                lineDash: null,
-                stroke: '#f0f0f0',
-              },
-            },
-          }}
-        />
-        <Axis
-          name={'day'}
-          title={null}
-          grid={{
-            alignTick: false,
-            line: {
-              style: {
-                lineWidth: 1,
-                lineDash: null,
-                stroke: '#f0f0f0',
-              },
-            },
-          }}
-        />
-        <Tooltip shared showMarkers={false} />
-        <Polygon
-          position={'name*day'}
-          color={['sales', '#BAE7FF-#1890FF-#0050B3']}
-          label={['sales', {
-            offset: -2,
-            style: {
-              fill: '#fff',
-              shadowBlur: 2,
-              shadowColor: 'rgba(0, 0, 0, .45)',
-            },
-          }]}
-          style={{
-            lineWidth: 1,
-            stroke: '#fff',
-          }}
-        >
-        </Polygon>
-        <Interaction type={'element-active'} />
-      </Chart>
-    );
-  }
+      </Polygon>
+      <Interaction type={'element-active'} />
+    </Chart>
+  )
 
   // 3. Heatmap
   const renderHeatMap = () => {
@@ -169,7 +152,7 @@ export default function DataVisualizationBizCharts4111() {
   const dataView = getSankeyDataView(sankeyChartTestData);
 
   const renderSankey = () => {
-    console.log(dataView);
+    //console.log(dataView);
     return (
       dataView && (
         <Chart
@@ -219,30 +202,16 @@ export default function DataVisualizationBizCharts4111() {
         <Typography>Basic 1.15.1. Data Visualization: BizCharts^4.1.11</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <>Line Chart
+        <>{lineChartTestData.id}
           {renderLineChart()}
         </>
-        <>Block Heatmap
+        <>{blockHeatmapChartTestData.id}
           {renderBlockHeatmapChart()}
         </>
-        <>Heatmap
+        <>{heatmapChartTestData.id}
           {renderHeatMap()}
         </>
-        <>Sankey
-          {renderSankey()}
-        </>
-      </AccordionDetails>
-      <AccordionDetails>
-        <>Line Chart
-          {renderLineChart()}
-        </>
-        <>Block Heatmap
-          {renderBlockHeatmapChart()}
-        </>
-        <>Heatmap
-          {renderHeatMap()}
-        </>
-        <>Sankey
+        <>{sankeyChartTestData.id}
           {renderSankey()}
         </>
       </AccordionDetails>

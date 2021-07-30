@@ -40,6 +40,7 @@ import ErrorFixesForm from './features/Errors/ErrorFixesForm';
 
 // Basic-1.15 Data Visualization
 import DataVisualizationBizCharts4111 from './features/Data_Visualization/DataVisualizationBizCharts4111';
+import DataVisualizationnivo0310 from './features/Data_Visualization/DataVisualizationnivo0310';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -323,6 +324,9 @@ export default function App() {
           </AccordionSummary>
           <AccordionDetails>
             <DataVisualizationBizCharts4111 />
+          </AccordionDetails>
+          <AccordionDetails>
+            <DataVisualizationnivo0310 />
           </AccordionDetails>
         </Accordion>
       </Box>

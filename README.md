@@ -94,3 +94,16 @@ Prepare data for Data Visualization
 Basic 1.15.1. Data Visualization: BizCharts^4.1.11
 npm install bizcharts
 npm install @antv/data-set
+
+Basic 1.15.2. Data Visualization: nivo^0.31.0
+npm install nivo
+npm install @nivo/core 
+npm install @nivo/legends  
+npm install @nivo/axes
+npm install @nivo/tooltip
+
+npm install @nivo/line
+
+npm install @nivo/heatmap
+
+npm install @nivo/sankey

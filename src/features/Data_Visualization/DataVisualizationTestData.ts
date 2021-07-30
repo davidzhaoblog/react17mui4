@@ -17,6 +17,20 @@ export const getTwoDimensionLinearChartTestData = (name: string, max = 10) => {
 };
 
 // 2. Block Heatmap
+export const blockHeatmapChartScale = {
+    name: {
+      type: 'cat',
+      values: ['Alexander', 'Marie', 'Maximilian', 'Sophia', 'Lukas', 'Maria', 'Leon', 'Anna', 'Tim', 'Laura'],
+    },
+    day: {
+      type: 'cat',
+      values: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    },
+    sales: {
+      nice: true,
+    }
+  };
+
 export interface BlockHeatmapChartTestDataType {
     name: number,
     day: number,
@@ -72,7 +86,7 @@ export interface SankeyChartTestLinkDataType {
 export const getSankeyChartTestData = (name: string, max = 1) => {
     const data = {
         id: name,
-        nodes: [{ name: 'Brazil' }, { name: 'Portugal' }, { name: 'France' }, { name: 'Spain' }, { name: 'England' }, { name: 'Canada' }, { name: 'Mexico' }, { name: 'USA' }, { name: 'Angola' }, { name: 'Morocco' }, { name: 'South Africa' }, { name: 'Mali' }, { name: 'China' },{ name: 'India' },{ name: 'Japan' },{ name: 'German' },{ name: 'Great Britain' },{ name: 'France' },{ name: 'Egypt' },] as SankeyChartTestNodeDataType[],
+        nodes: [{ name: 'Brazil' }, { name: 'Portugal' }, { name: 'France' }, { name: 'Spain' }, { name: 'England' }, { name: 'Canada' }, { name: 'Mexico' }, { name: 'USA' }, { name: 'Angola' }, { name: 'Morocco' }, { name: 'South Africa' }, { name: 'Mali' }, { name: 'China' },{ name: 'India' },{ name: 'Japan' },{ name: 'German' },{ name: 'Great Britain' },{ name: 'Russia' },{ name: 'Egypt' },] as SankeyChartTestNodeDataType[],
         links: [] as SankeyChartTestLinkDataType[]
     };
 
@@ -92,7 +106,7 @@ export const getSankeyChartTestData = (name: string, max = 1) => {
             data.links[linkIndex++] = { source: x, target: y, value: Math.floor(Math.random() * max) };
         }
     }
-    console.log(data);
+    //console.log(data);
     return data;
 };
 
